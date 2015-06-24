@@ -5,49 +5,57 @@
 	}
 
 
-	.content
-	{
-		width: 100%;
-		height: 100%;
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: 999999999;	
+ body {
+    background: #d88b7f url(img/sky2.png) 0 0 repeat-x;
+    padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
 	}
-	.centre-form-bg
-	{
-		background: rgba(0,0,0,.3);
-		border-radius: 13px;
-		width: 400px;
-		height: 222px;
-		left: 50%;
-		top: 50%;
-		margin-left: -200px;
-		margin-top: -106px;
-		position: absolute;
+
+.content{
+
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999999999;	
 	}
-	.centre-form
-	{
-		width: 94%;
-		margin: 3%;
-		height: 198px;
-		background: #2D2D2D;
-		border-radius: 10px;
-		text-align: center;
-		box-sizing: border-box;
-		padding: 25px;
 
-		background: -moz-radial-gradient(center, ellipse cover,  rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
-		background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,0,0,1)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
-		background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
-		background: -o-radial-gradient(center, ellipse cover,  rgba(0,0,0,1) 0%,rgba(255,255,255,0) 100%); /* Opera 12+ */
-		background: -ms-radial-gradient(center, ellipse cover,  rgba(0,0,0,1) 0%,rgba(255,255,255,0) 100%); /* IE10+ */
-		background: radial-gradient(ellipse at center,  rgba(0,0,0,1) 0%,rgba(255,255,255,0) 100%); /* W3C */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+.centre-form-bg{
 
-		}
+	background: rgba(0,0,0,.3);
+	border-radius: 13px;
+	width: 400px;
+	height: 222px;
+	left: 50%;
+	top: 50%;
+	margin-left: -200px;
+	margin-top: -106px;
+	position: absolute;
+	}
 
-		.myButton, .myPlay, .myLogOut {
+.centre-form{
+
+	width: 94%;
+	margin: 3%;
+	height: 198px;
+	background: #2D2D2D;
+	border-radius: 10px;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 25px;
+	background: -moz-radial-gradient(center, ellipse cover,  rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,0,0,1)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  rgba(0,0,0,1) 0%,rgba(255,255,255,0) 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  rgba(0,0,0,1) 0%,rgba(255,255,255,0) 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  rgba(0,0,0,1) 0%,rgba(255,255,255,0) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	}
+
+.myPlay{
 	background-color: transparent;
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
@@ -58,188 +66,48 @@
 	color: #ffffff;
 	font-family: arial;
 	font-size: 17px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	width: 262px;
+	text-decoration: none;
+	text-transform: uppercase;
 	font-weight: bold;
-	padding-top: 12px;
-	padding-bottom: 12px;
-	width: 262px;
-	text-decoration: none;
-	text-transform: uppercase;
 	}
-	.myButton:hover {
-		background: linear-gradient(to bottom, #ac4737 5%, #d78c80 100%);
+	.myPlay:hover {
+		background: linear-gradient(to bottom, #2D882D 5%, #16AE16 100%);
 		background-color:#7000A6;
 	}
-	.myButton:active {
+	.myPlay:active {
 		position:relative;
 		top:1px;
 	}
 
-	.mySignUp {
-		background-color: transparent;
-	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;
-	border-radius: 6px;
-	border: 1px solid #fff;
-	display: none;
-	cursor: pointer;
-	color: #ffffff;
-	font-family: arial;
-	font-size: 17px;
-	font-weight: bold;
-	padding-top: 12px;
-	padding-bottom: 12px;
-	width: 262px;
-	text-decoration: none;
-	text-transform: uppercase;
-	}
 
-	.mySignUp {
-		background: linear-gradient(to bottom, #ac4737 5%, #d78c80 100%);
-		background-color:#7000A6;
-	}
-	.mySignUp:active {
-		position:relative;
-		top:1px;
-	}
+.stage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: 900px;
+    height: 100%;
+    overflow: hidden;
+    z-index: 100;
+    }
 
-	.myInput
-	{
-		width: 252px;
-		border: 1px solid #ffffff;
-		border-radius: 6px;
-		background: transparent;
-		padding: 12px 5px 12px 5px;
-		display: none;
-		color: #ffffff;
-		font-size: 16px;	
-	}
+.far-clouds {
+    background: transparent url(img/far-clouds3.png) 305px 102px repeat-x;
+    }
 
+.near-clouds {
+    background: transparent url(img/near-clouds3.png) 305px 162px repeat-x;
+    }
 
-	.selectBox {
-    -webkit-appearance: none;
-	background-color: transparent;
-	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;
-	border-radius: 6px;
-	color: #ffffff;
-	border: 1px solid #fff;
-	display: none;
-	font-family: arial;
-	font-size: 16px;
-	padding-top: 12px;
-	padding-bottom: 12px;
-	width: 262px;
-	text-decoration: none;
-	margin-bottom: 0;
-	cursor: pointer;
+.mainContent{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 101;   
 	}
-
-	.lilButton
-	{
-	background-color: transparent;
-	border-radius: 6px;
-	border: 1px solid #CCB5B2;
-	display: none;
-	cursor: pointer;
-	color: #ffffff;
-	font-family: arial;
-	font-size: 12px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	width: 262px;
-	text-decoration: none;
-	}
-	.lilButton:hover {
-		background: linear-gradient(to bottom, #ac4737 5%, #d78c80 100%);
-		background-color:#7000A6;
-	}
-	.lilButton:active {
-		position:relative;
-		top:1px;
-	}
-	
-	.checkBox {
-	display: none;
-	color: #ffffff;
-	font-family: arial;
-	font-size: 17px;
-	padding-top: 12px;
-	padding-bottom: 12px;
-	text-decoration: none;
-
-	}
-	
-	.myError {
-	display: none;
-	font-family: arial;
-	font-size: 14px;
-	padding-top: 10px;
-	color: #ffccbb;
-	background: transparent;
-	}
-
-	.radio
-	{
-	display: none;
-	color: #ffffff;
-	font-family: arial;
-	font-size: 17px;
-	}
-
-	.mySubmit
-	{
-	width: 252px;
-	border: 1px solid #ffffff;
-	border-radius: 6px;
-	background: transparent;
-	padding: 12px 5px 12px 5px;
-	display: none;
-	font-size: 16px;
-	cursor: pointer;
-	color: #ffffff;
-	text-decoration: none;
-	text-transform: uppercase;
-
-	}
-	.mySubmit:hover {
-	background: linear-gradient(to bottom, #ac4737 5%, #d78c80 100%);
-	background-color:#7000A6;
-	}
-	.mySubmit:active {
-	position:relative;
-	top:1px;
-	}
-
-
-        body {
-            background: #d88b7f url(img/sky2.png) 0 0 repeat-x;
-            padding: 0;
-			margin: 0;
-			width: 100%;
-			height: 100%;
-	    }
-        .stage {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            min-width: 900px;
-            height: 100%;
-            overflow: hidden;
-            z-index: 100;
-        }
-        .far-clouds {
-            background: transparent url(img/far-clouds3.png) 305px 102px repeat-x;
-        }
-        .near-clouds {
-            background: transparent url(img/near-clouds3.png) 305px 162px repeat-x;
-        }
-        .mainContent{
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 101;   
-		}
 
 
 .roof{
@@ -248,15 +116,12 @@
 	height: 0;
 	position: absolute;
 	bottom: 0;
-	display: none;
 
 }
 
 
-
-
-    .cat{
-    background: url(try.png) 0 0;
+.cat{
+    background: url(img/run.png) 0 0;
     width: 180px;    
     height: 180px;
     position: absolute;
@@ -265,8 +130,8 @@
     display: none;
     }
 
-    .cat-jump{
-    background: url(try-jump-new.png) 0 0;
+ .cat-jump{
+    background: url(img/jump.png) 0 0;
     width: 180px;    
     height: 180px;
     position: absolute;
@@ -274,10 +139,6 @@
     left: 200px;
     display: none;
     }
-
-
-
-
 
 
 .cat-stay{
@@ -290,26 +151,24 @@
 	display: none;
 }
 
+a, a:visited {
+	color: #3a9bc7;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
 
+ul {
+	padding-left: 40px;
+}
 
-
-.myPlay, .myLogOut {
-	font-weight: none;
-	}
-	.myPlay:hover {
-		background: linear-gradient(to bottom, #2D882D 5%, #16AE16 100%);
-		background-color:#7000A6;
-	}
-	.myPlay:active {
-		position:relative;
-		top:1px;
-	}
-
-	.myLogOut:hover {
-		background: linear-gradient(to bottom, #8F2F31 5%, #9C090D 100%);
-		background-color:#7000A6;
-	}
-	.myLogOut:active {
-		position:relative;
-		top:1px;
-	}
+.container  {
+	min-width:900px;
+	padding-top:359px;
+	position:relative;
+	width:100%;
+}
+.mainContent {
+	padding: 40px 200px;
+}
