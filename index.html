@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="eng" lang="eng">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>meowmeow</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+    <script src="jquery-ui-1.7.2.spritely.custom.min.js" type="text/javascript"></script>
+    <script src="jquery.spritely-0.6.8.js"></script>
+    <script src="jquery-1.7.1.min.js" ></script>
+    <script src="jquery.spritely.js" ></script>    
+    <script src="jquery-ui-1.7.2.spritely.custom.min.js" type="text/javascript"></script>
+    <script src="jquery.spritely-0.6.8.js"></script>
+    <script src="jquery-1.7.1.min.js" ></script>
+    <script src="jquery.spritely.js" ></script>
+    <?php
+    session_start();
+    ?>
+
+</head>
+<body>
+<div class="content">        
+    <div id="cfb" class="centre-form-bg">
+        <div id = "centre-ff" class="centre-form">
+            <img id = "img" main = "main" style="margin-bottom: 12px; cursor: pointer;" width="80%" src="img/logo.png">
+            <button id="reg-b" class="myButton">Registration</button>
+            <button id="login-b" style="margin-top: 5px;" class="myButton">Sign up</button>
+            <button id="play" style = "display: none" class="myPlay">Play!</button>
+            <button id="log-out" style="margin-top: 5px; display: none;" class="myLogOut">Log Out</button>
+                <form>
+                <input id="your-login" name = "login" placeholder="login" class="myInput" type="text" size="40" maxlength="20">
+                <p id="error-log-2" class="myError">your login is invalid</p>
+                <input id="your-pass" name = "pass" placeholder="password" style="margin-top: 10px;" class="myInput" type="password" size="40" maxlength="20">
+                <p id="error-pass-2" class="myError">your password is invalid</p>
+                <input id="your-slogin" name = "slogin" placeholder="login" style="display: none;" class="myInput" type="text" size="40" maxlength="20">
+                <input id="your-spass" name = "spass" placeholder="password" style="margin-top: 10px; display: none;" class="myInput" type="password" size="40" maxlength="20">
+                <input id="select-b" select = "" size="40" style="margin-top: 10px;" class="selectBox" type="button" value = "Ukraine">
+                <input id="ukraine" class="lilButton" type="button" value = "Ukraine">
+                <input id="russia" class="lilButton" type="button" value = "Russia">
+                <input id="usa" class="lilButton" type="button" value = "USA">
+                <input id="japan" class="lilButton" type="button" value = "Japan">
+                <p id="error-sel" class="myError"></p> <br>
+                <p  id = "radio-b" class = "radio" style="margin-top: 10px" >
+                <input type="radio" checked="checked" id="dva1"/><label for="dva1"> Man</label><input  type="radio" style="margin-left: 50px;" id="dva2"/><label for="dva2"> Women</label>
+                </p>
+                <p id="check-b" class = "checkBox">
+                    <label> Do you agree with our terms?<BR></label>
+                    <input type = "checkbox"
+                        id = "yes"
+                        value = "yes"
+                        checked="checked">
+                    <label>yes</label>
+                </p>
+                <p id="error-rule" class="myError">you should click 'yes'</p>
+                <input id="your-ok" type="submit" style="margin-top: 10px;" class="mySubmit" value = "Submit" >
+                <p id="resp" style="color: #fff"></p>
+
+        </div>
+    </div>
+    <div id="roof" class="roof"></div>
+    <div id="cat" class="cat"></div>
+    <div id="cat-stay" class="cat-stay"></div>
+    <div id="cat-jump" class="cat-jump"></div>
+    
+</div>
+
+<div class="container">
+    <div id="far-clouds" class="far-clouds stage"></div>
+    <div id="near-clouds" class="near-clouds stage"></div>
+</div>
+</body>
+</html>
+
+<script type="text/javascript" src="script.js" charset="utf-8"></script>
+
