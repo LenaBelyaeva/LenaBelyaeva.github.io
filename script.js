@@ -60,13 +60,15 @@ function test(value) {
 		
 
 	function goo(){
-		$('#roof').pan({fps: 30, speed: 13, dir: 'left', depth: 30});	
+		$('#roof').pan({fps: 100, speed: 10, dir: 'left', depth: 30});
+
+		$('#roof-hole').pan({fps: 100, speed: 10 , dir: 'left', depth: 30});
 		$('#far-clouds').spSpeed(2);
         $('#near-clouds').spSpeed(3);
 	}
 
 	function run_cat(){
-		$('#cat').show().animate({left: '200px'},1000)
+		$('#cat').show().animate({left: '-300px'},1000)
 	}
 
 	function hello_cat(){
@@ -84,7 +86,7 @@ function test(value) {
 
 
 	function show_objects(){
-       	$('#roof').animate({height: '162px'},500);
+       	$('#roof').animate({height: '159px', top: '500px'},500);
        	setTimeout(run_cat, 500);
 		setTimeout(bye_cat, 1500);
     }
@@ -198,8 +200,8 @@ function lol(){
 setInterval(lol, 5000);
 
 function roof_jump(){
-	$('#roof').animate({bottom: '-50px'}, 416.5).animate({bottom: 0}, 416.5);
-	$('#far-clouds').animate({top: '15px'}, 416.5).animate({top: 0}, 416.5);
+	$('#roof').animate({top: '550px'}, 416.5).animate({top: 500}, 416.5);
+	$('#roof-hole').animate({bottom: '-191px'}, 416.5).animate({bottom: '-141px'}, 416.5);
 	$('#near-clouds').animate({top: '15px'}, 416.5).animate({top: 0}, 416.5);
 }
 
