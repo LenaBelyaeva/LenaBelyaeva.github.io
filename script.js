@@ -8,7 +8,7 @@ var cat = document.getElementById('cat');
 var roof = document.getElementById('roof');
 var cat_jump = document.getElementById('cat-jump');
 var cat_stay = document.getElementById('cat-stay');
-
+var task = document.getElementById('task');
 
 
 
@@ -60,9 +60,9 @@ function test(value) {
 		
 
 	function goo(){
-		$('#roof').pan({fps: 30, speed: 13, dir: 'left', depth: 30});	
-		$('#far-clouds').spSpeed(2);
-        $('#near-clouds').spSpeed(3);
+		$('#roof').pan({fps: 37, speed: 15, dir: 'left', depth: 30});	
+		$('#far-clouds').spSpeed(4);
+        $('#near-clouds').spSpeed(7);
 	}
 
 	function run_cat(){
@@ -79,6 +79,7 @@ function test(value) {
 		$('#cat').hide();
 		$('#cat-stay').show();
 		$('#cat').spStop(true);
+		play_b.disabled = false;
 	}
 
 
@@ -95,7 +96,7 @@ function test(value) {
         show_objects();
 	}
 
-	var play_game = false
+	var play_game = false;
 
 	function what(){
 		play_game = true;
@@ -106,11 +107,14 @@ function test(value) {
 	if (cat_stay.style.display=="none"){
 		return;
 	}
-	
 		$('#cfb').hide(50);
 		hello_cat();
 		goo();
 		setTimeout(what, 950);
+		clearInterval(IDeyes);
+		IDquest = setInterval(testt,50);
+		$('#task').show();
+
 	}
 
 
@@ -139,7 +143,7 @@ function jumpin(){
 	jumping = false;
 }
 
-document.onclick = function meowmeow(){
+function meowmeow(){
 	if (play_game == false){
 		return;
 	}
@@ -149,12 +153,19 @@ document.onclick = function meowmeow(){
 	}
 
 	jumping = true;
-	roof_jump();
+	//roof_jump();
     jump();
     setTimeout(run, 833);
     setTimeout(jumpin, 835);
 }
-
+var x = 52;
+$(document).ready(function() {
+     $("body").keypress(function(e) {
+          if (e.which == x) {
+              meowmeow();
+          }
+     });
+});
 
 
 
@@ -195,12 +206,64 @@ function lol(){
 }
 
 
-setInterval(lol, 5000);
+var IDeyes = setInterval(lol, 5000);
 
 function roof_jump(){
 	$('#roof').animate({bottom: '-50px'}, 416.5).animate({bottom: 0}, 416.5);
-	$('#far-clouds').animate({top: '15px'}, 416.5).animate({top: 0}, 416.5);
-	$('#near-clouds').animate({top: '15px'}, 416.5).animate({top: 0}, 416.5);
+	$('#near-clouds').animate({top: '20px'}, 416.5).animate({top: 0}, 416.5);
 }
 
 
+/*questions*/
+var ls1 = ["0", "56-49-6=?", "6/3=?", "36/12=?", "112/28=?", "15/3=?", "sqrt(36)=?", "42/6=?", "72/9=?", "108/12=?"];
+var ls2 = ["0", "21/(3*7)=?", "1+1=?", "6/2=?", "sqrt(16)=?", "25/5=?", "72/12=?", "35/5=?", "40-32=?", "73-64=?"];
+
+function generate_quest(){
+	var random = Math.random();
+	var num = Math.floor(Math.random() * 9) + 1;
+	if (random < 0.5){
+		$('#task').text(ls1[num]);
+	}
+	else{
+		$('#task').text(ls2[num]);
+	}
+	x = num+48;
+};
+
+
+function testt() {
+	hui = roof.style.backgroundPositionX;
+	//$('#task').text(parseInt(hui)<= -970);
+
+	if (  parseInt(hui)<= -1680)	{ generate_quest(); }
+	if (((parseInt(hui)<= -1076)&&(parseInt(hui)>= -1210))&&(cat.style.display!= 'none' )){
+		clearInterval(IDquest);
+		task.style.display = 'none';
+		$('#cat-jump').hide();
+		$('#cat').hide();
+		$('#cat-stay').show();
+		play_b.disabled = true;
+		play_game = false;
+		$('#cat-stay').animate({bottom: '-87px'},416.5);
+		$('#roof').destroy();
+		$('#cfb').show(50);
+		$('#roof').animate({backgroundPositionX: '0px'},3000);
+		setTimeout(new_game,3000)
+		$('#far-clouds').spSpeed(1);
+        $('#near-clouds').spSpeed(2);
+
+		}
+}
+
+
+
+
+function new_game(){
+	cat_jump.style.display = 'none';
+	cat.style.left = '-100px';
+	cat.style.display = 'none';
+	cat_stay.style.display = 'none';
+	cat_stay.style.bottom = '160px';
+	cat_stay.style.left = '200px';
+	show_objects();
+}

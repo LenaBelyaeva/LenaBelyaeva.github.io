@@ -20,7 +20,7 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 999999999;	
+	z-index: 222;	
 	}
 
 .centre-form-bg{
@@ -34,10 +34,11 @@
 	margin-left: -200px;
 	margin-top: -106px;
 	position: absolute;
+	z-index: 999999999;	
 	}
 
 .centre-form{
-
+	z-index: 99999999;	
 	width: 94%;
 	margin: 3%;
 	height: 198px;
@@ -99,7 +100,7 @@
     }
 
 .near-clouds {
-    background: transparent url(img/near-clouds3.png) 305px 162px repeat-x;
+    background: transparent url(img/near-clouds-4.png) 305px 162px repeat-x;
     }
 
 .mainContent{
@@ -109,9 +110,22 @@
     z-index: 101;   
 	}
 
+.task{
+	position: absolute;
+	left: 47%;
+	top: 40%;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: comic;
+	font-size: 38px;
+
+
+}
+
 
 .roof{
-	background: url(img/roof_texture.png) 0 0 repeat-x;
+	background: url(img/roof_texture-2.png) 0 0 repeat-x;
 	width: 100%	;
 	height: 0;
 	position: absolute;
