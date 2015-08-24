@@ -9,7 +9,7 @@ var roof = document.getElementById('roof');
 var cat_jump = document.getElementById('cat-jump');
 var cat_stay = document.getElementById('cat-stay');
 var task = document.getElementById('task');
-
+var result = document.getElementById('result');
 
 
 function test(value) {
@@ -114,6 +114,7 @@ function test(value) {
 		clearInterval(IDeyes);
 		IDquest = setInterval(testt,50);
 		$('#task').show();
+		$('#result').text(0)
 
 	}
 
@@ -122,6 +123,7 @@ function test(value) {
 
 $('#cat').sprite({fps: 12, no_of_frames: 2});
 
+                
 function run(){
     $('#cat-jump').hide();
     $('#cat').show();
@@ -215,28 +217,62 @@ function roof_jump(){
 
 
 /*questions*/
-var ls1 = ["0", "56-49-6=?", "6/3=?", "36/12=?", "112/28=?", "15/3=?", "sqrt(36)=?", "42/6=?", "72/9=?", "108/12=?"];
-var ls2 = ["0", "21/(3*7)=?", "1+1=?", "6/2=?", "sqrt(16)=?", "25/5=?", "72/12=?", "35/5=?", "40-32=?", "73-64=?"];
+var ls1 = ["0", "56-49-6=?", "6/3=?", "36/12=?", "112/28=?", "15/3=?", "48/8=?", "42/6=?", "72/9=?", "108/12=?"];
+var ls2 = ["0", "21/(3*7)=?", "1+1=?", "6/2=?", "56/14=?", "25/5=?", "72/12=?", "35/5=?", "40-32=?", "73-64=?"];
+var ls3 = ["0", "75-69-5=?", "34/17=?", "9/3=?", "2*2=?", "60/12=?", "54-48=?", "28/4=?", "2*3+2=?", "12-3=?"];
+var ls4 = ["0", "48/(6*8)=?", "56/28=?", "24/8=?", "36/9=?", "75/25=?", "48-42=?", "14/2=?", "5*2-2=?", "3+3+3=?"];
+var ls5 = ["0", "2-1=?", "15*0+2=?", "1+1+1=?", "11-6-1=?", "7-5+3=?", "54/9=?", "10-1-2=?", "64/4/2=?", "81-72=?"];
+var ls6 = ["0", "1*1*1=?", "2+5*0=?", "12/4=?", "2*1+1*2=?", "65/13=?", "36/6=?", "14/2=?", "72-64=?", "10-8+7=?"];
+var ls7 = ["0", "72/(12*6)=?", "94/47=?", "9-2*3=?", "84/21=?", "1+3+1=?", "1*2*3=?", "1*7*1=?", "2+2*2+2=?", "3*3=?"];
+var ls8 = ["0", "9*7/63=?", "78/39=?", "2*1+1=?", "94/24=?", "70/7/2=?", "2+2+2=?", "56/8=?", "56/7=?", "81/9=?"];
+
 
 function generate_quest(){
 	var random = Math.random();
 	var num = Math.floor(Math.random() * 9) + 1;
-	if (random < 0.5){
+	if (random < 0.2){
 		$('#task').text(ls1[num]);
 	}
-	else{
+	else if (random < 0.3){
 		$('#task').text(ls2[num]);
+	}
+	else if (random < 0.4){
+		$('#task').text(ls3[num]);
+	}
+	else if (random < 0.5){
+		$('#task').text(ls4[num]);
+	}
+	else if (random < 0.6){
+		$('#task').text(ls5[num]);
+	}
+	else if (random < 0.7){
+		$('#task').text(ls6[num]);
+	}
+	else if (random < 0.8){
+		$('#task').text(ls7[num]);
+	}
+	
+	else{
+		$('#task').text(ls8[num]);
 	}
 	x = num+48;
 };
 
 
 function testt() {
-	hui = roof.style.backgroundPositionX;
-	//$('#task').text(parseInt(hui)<= -970);
+	//result//
+	res = parseInt($('#result').text(), 10);
+	res += 1;
+	$('#result').text(res);
+	//result//
 
-	if (  parseInt(hui)<= -1680)	{ generate_quest(); }
-	if (((parseInt(hui)<= -1076)&&(parseInt(hui)>= -1210))&&(cat.style.display!= 'none' )){
+	hui = roof.style.backgroundPositionX;
+
+	if (  parseInt(hui,10)<= -1680)	{ 
+		generate_quest(); 
+		
+	}
+	if (((parseInt(hui,10)<= -1076)&&(parseInt(hui,10)>= -1210))&&(cat.style.display!= 'none' )){
 		clearInterval(IDquest);
 		task.style.display = 'none';
 		$('#cat-jump').hide();
@@ -247,11 +283,11 @@ function testt() {
 		$('#cat-stay').animate({bottom: '-87px'},416.5);
 		$('#roof').destroy();
 		$('#cfb').show(50);
-		$('#roof').animate({backgroundPositionX: '0px'},3000);
-		setTimeout(new_game,3000)
+		$('#roof').animate({backgroundPositionX: '0px'},1500);
+		setTimeout(new_game,1500)
 		$('#far-clouds').spSpeed(1);
         $('#near-clouds').spSpeed(2);
-
+        var IDeyes = setInterval(lol, 5000);
 		}
 }
 
@@ -267,3 +303,32 @@ function new_game(){
 	cat_stay.style.left = '200px';
 	show_objects();
 }
+
+
+
+
+//speed
+function one(){
+    $('#roof').spSpeed(16);
+};
+function two(){
+    $('#roof').spSpeed(17);
+    $('#far-clouds').spSpeed(4);
+    $('#near-clouds').spSpeed(8);
+    $('#roof').fps(39);
+};
+function three(){
+    $('#roof').spSpeed(18);
+};
+function four(){
+    $('#roof').spSpeed(19);
+    $('#far-clouds').spSpeed(5);
+    $('#near-clouds').spSpeed(9);
+    $('#roof').fps(41);
+};
+
+
+setTimeout(one(), 7000);
+setTimeout(two(), 14000);
+setTimeout(three(), 25000);
+setTimeout(four(), 40000);
