@@ -211,7 +211,7 @@ function testt() {
 	//result//
 
 	//hui = roof.style.backgroundPositionX;
-	hui = $('#roof').css('backgroundPositionX');
+	hui = $('#roof').css('background-position');
 	if (  parseInt(hui,10)<= -1680)	{ 
 		generate_quest(); 
 		
