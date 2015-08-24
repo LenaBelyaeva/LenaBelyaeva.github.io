@@ -11,53 +11,37 @@ var cat_stay = document.getElementById('cat-stay');
 var task = document.getElementById('task');
 var result = document.getElementById('result');
 
-
 function test(value) {
 	$('#centre-ff').animate({height: (value-25 +'px')});
 	$('#cfb').animate({height: (value + 'px'), 'margin-top': ((-1)*value/2 +'px')});	
 }
 
 
-          $(document).ready(function() {
-                $('#far-clouds').pan({fps: 30, speed: 1, dir: 'left', depth: 30});
-                $('#near-clouds').pan({fps: 30, speed: 2, dir: 'left', depth: 70});
-                show_objects();
-                
-                window.actions = {
-                    speedyClouds: function(){
-                        $('#far-clouds').spSpeed(12);
-                        $('#near-clouds').spSpeed(20);
-                    },
-                    runningClouds: function(){
-                        $('#far-clouds').spSpeed(8);
-                        $('#near-clouds').spSpeed(12);
-                    },
-                    walkingClouds: function(){
-                        $('#far-clouds').spSpeed(3);
-                        $('#near-clouds').spSpeed(5);
-                    },
-                    lazyClouds: function(){
-                        $('#far-clouds').spSpeed(0.7);
-                        $('#near-clouds').spSpeed(1);
-                    },
-                    stop: function(){
-                        $('#far-clouds, #near-clouds').spStop();
-                    },
-                    start: function(){
-                        $('#far-clouds, #near-clouds').spStart();
-                    },
-                    toggle: function(){
-                        $('#far-clouds, #near-clouds').spToggle();
-                    },
-                    left: function(){
-                        $('#far-clouds, #near-clouds').spChangeDir('left');                    
-                    },
-                    right: function(){
-                        $('#far-clouds, #near-clouds').spChangeDir('right');                    
-                    }
-                };
-            });    
-		
+$(document).ready(function() {
+
+	$('#far-clouds').pan({fps: 30, speed: 1, dir: 'left', depth: 30});
+    $('#near-clouds').pan({fps: 30, speed: 2, dir: 'left', depth: 70});
+    show_objects();
+    $('#cat').sprite({fps: 12, no_of_frames: 2});
+    play_b.onclick = function(){
+
+	if (cat_stay.style.display=="none"){
+		return;
+	}
+		$('#cfb').hide(50);
+		hello_cat();
+		goo();
+		setTimeout(what, 950);
+		clearInterval(IDeyes);
+		IDquest = setInterval(testt,50);
+		$('#task').show();
+		$('#result').text(0)
+
+	}
+
+
+});
+
 
 	function goo(){
 		$('#roof').pan({fps: 37, speed: 15, dir: 'left', depth: 30});	
@@ -102,26 +86,7 @@ function test(value) {
 		play_game = true;
 	}
 
-	play_b.onclick = function(){
-
-	if (cat_stay.style.display=="none"){
-		return;
-	}
-		$('#cfb').hide(50);
-		hello_cat();
-		goo();
-		setTimeout(what, 950);
-		clearInterval(IDeyes);
-		IDquest = setInterval(testt,50);
-		$('#task').show();
-		$('#result').text(0)
-
-	}
-
-
-    
-
-$('#cat').sprite({fps: 12, no_of_frames: 2});
+	
 
                 
 function run(){
@@ -218,9 +183,9 @@ function roof_jump(){
 
 /*questions*/
 var ls1 = ["0", "56-49-6=?", "6/3=?", "36/12=?", "112/28=?", "15/3=?", "48/8=?", "42/6=?", "72/9=?", "108/12=?"];
-var ls2 = ["0", "21/(3*7)=?", "1+1=?", "6/2=?", "56/14=?", "25/5=?", "72/12=?", "35/5=?", "40-32=?", "73-64=?"];
+var ls2 = ["0", "21/(3*7)=?", "1+1=?", "6/2=?", "56/14=?", "25/5=?", "72/12=?", "35/5=?", "40-32=?", "72-64=?"];
 var ls3 = ["0", "75-69-5=?", "34/17=?", "9/3=?", "2*2=?", "60/12=?", "54-48=?", "28/4=?", "2*3+2=?", "12-3=?"];
-var ls4 = ["0", "48/(6*8)=?", "56/28=?", "24/8=?", "36/9=?", "75/25=?", "48-42=?", "14/2=?", "5*2-2=?", "3+3+3=?"];
+var ls4 = ["0", "48/(6*8)=?", "56/28=?", "24/8=?", "36/9=?", "125/25=?", "48-42=?", "14/2=?", "5*2-2=?", "3+3+3=?"];
 var ls5 = ["0", "2-1=?", "15*0+2=?", "1+1+1=?", "11-6-1=?", "7-5+3=?", "54/9=?", "10-1-2=?", "64/4/2=?", "81-72=?"];
 var ls6 = ["0", "1*1*1=?", "2+5*0=?", "12/4=?", "2*1+1*2=?", "65/13=?", "36/6=?", "14/2=?", "72-64=?", "10-8+7=?"];
 var ls7 = ["0", "72/(12*6)=?", "94/47=?", "9-2*3=?", "84/21=?", "1+3+1=?", "1*2*3=?", "1*7*1=?", "2+2*2+2=?", "3*3=?"];
@@ -261,7 +226,7 @@ function generate_quest(){
 
 function testt() {
 	//result//
-	res = parseInt($('#result').text(), 10);
+	var res = parseInt($('#result').text(), 10);
 	res += 1;
 	$('#result').text(res);
 	//result//
@@ -284,11 +249,16 @@ function testt() {
 		$('#roof').destroy();
 		$('#cfb').show(50);
 		$('#roof').animate({backgroundPositionX: '0px'},1500);
-		setTimeout(new_game,1500)
+		setTimeout(new_game,1500);
 		$('#far-clouds').spSpeed(1);
         $('#near-clouds').spSpeed(2);
         var IDeyes = setInterval(lol, 5000);
-		}
+       	var best = parseInt($('#best').text(), 10);
+        if (res > best) {
+        	$('#best').text(res);
+        }
+
+        };
 }
 
 
