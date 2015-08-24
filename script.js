@@ -210,8 +210,8 @@ function testt() {
 	$('#result').text(res);
 	//result//
 
-	hui = roof.style.backgroundPositionX;
-
+	//hui = roof.style.backgroundPositionX;
+	hui = $('#roof').css('backgroundPositionX');
 	if (  parseInt(hui,10)<= -1680)	{ 
 		generate_quest(); 
 		
