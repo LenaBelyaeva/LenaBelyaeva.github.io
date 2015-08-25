@@ -1,3 +1,4 @@
+(function () {
 
 var cfb = document.getElementById('cfb');
 var img = document.getElementById('img');
@@ -21,8 +22,8 @@ $(document).ready(function() {
 
 	$('#far-clouds').pan({fps: 30, speed: 1, dir: 'left', depth: 30});
     $('#near-clouds').pan({fps: 30, speed: 2, dir: 'left', depth: 70});
-    show_objects();
     $('#cat').sprite({fps: 12, no_of_frames: 2});
+    show_objects();
     play_b.onclick = function(){
 
 	if (cat_stay.style.display=="none"){
@@ -52,7 +53,7 @@ $(document).ready(function() {
 	}
 
 	function run_cat(){
-		$('#cat').show().animate({left: '200px'},1000)
+		$('#cat').show().animate({left: '200px'},1000);
 	}
 
 	function hello_cat(){
@@ -227,7 +228,11 @@ function testt() {
 		$('#cat-stay').animate({bottom: '-87px'},416.5);
 		$('#roof').destroy();
 		$('#cfb').show(50);
-		$('#roof').animate({backgroundPositionX: '0px'},1500);
+
+
+
+		$('#roof').animate({backgroundPosition: '0px 0px'}, 1500);
+		//$('#roof').animate({backgroundPosition:'0px 162px'},1500);
 		setTimeout(new_game,1500);
 		$('#far-clouds').spSpeed(1);
         $('#near-clouds').spSpeed(2);
@@ -296,3 +301,16 @@ function four(){
     $('#near-clouds').spSpeed(9);
     $('#roof').fps(41);
 };
+
+
+
+
+
+
+
+
+
+
+
+
+})();
